@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IANSA | Login</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="{% static '/img/favicon.png' %}"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}" />
+    <!-- Iconos -->
+    <script
+      src="https://kit.fontawesome.com/508f0975ba.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .body-bg {
+        background-image: url(../../static/img/bglogin.jpg);
+      }
+    </style>
+  </head>
+  <body class="body-bg h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0">
+    <main
+      class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl"
+    >
+      <div class="flex justify-center">
+        <img
+          class="w-5/12"
+          src="{% static '/img/logo.png' %}"
+          alt="logo-iansa"
+        />
+      </div>
+      <section>
+        <h3 class="font-bold text-2xl">Bienvenid@ a IANSA CERO-K</h3>
+        <p class="text-gray-600 pt-2">Acceda a su cuenta.</p>
+      </section>
+
+      <section>
+        <!--class="mt-10" sin esta clase login queda centrado totalmente-->
+        <form class="flex flex-col" method="POST" action="#">
+          {% csrf_token %}
+          <div class="mb-6 pt-3 rounded bg-gray-200">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2 ml-3"
+              for="rut"
+              >RUT</label
+            >
+            <input
+              type="text"
+              id="rut"
+              name="{{form.username.name}}"
+              class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
+            />
+          </div>
+          <div class="mb-6 pt-3 rounded bg-gray-200">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2 ml-3"
+              for="password"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="{{form.password.name}}"
+              class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
+            />
+          </div>
+          <div class="flex justify-end">
+            <a
+              href="#"
+              class="text-sm text-blue-600 hover:text-blue-800 hover:underline mb-6"
+              >¿Ha olvidado su contraseña?</a
+            >
+          </div>
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"
+            type="submit"
+          >
+            Iniciar sesión
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
