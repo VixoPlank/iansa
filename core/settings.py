@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # Mis APP
     'login',
     'home',
+    'fabrication',
     # Django
     'django.contrib.admin',
     'django.contrib.auth',

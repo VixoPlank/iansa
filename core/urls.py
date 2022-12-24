@@ -21,5 +21,7 @@ urlpatterns = [
     path('', include('login.urls')),
     #home
     path('home/', include('home.urls')),
+    # fabrication
+    path('agregar-recetas/', include('fabrication.urls')),
     path('admin/', admin.site.urls),
 ]
