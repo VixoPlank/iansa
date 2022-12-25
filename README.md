@@ -9,9 +9,7 @@ Ejecute el proyecto:
 
 `python manage.py runserver`
 
-Usar `Git Flow` y `Conventional Commits`
-
-[Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow "Git Flow") y [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/ "Conventional Commits").
+Usar[Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow "Git Flow") y [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/ "Conventional Commits").
 
 Este proyecto utiliza:
 
