@@ -40,21 +40,21 @@ class FormularioReceta(forms.ModelForm):
                                        attrs={
                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                            'id': 'producto'
-                                       }),required=False)
+                                       }),required=True)
 
     codigo_2 = forms.IntegerField(
                                widget=forms.NumberInput(
                                    attrs={
                                        'class': 'block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                        'id': 'codigo_2'
-                                   }),required=False)
+                                   }),required=True)
 
     kg_2 = forms.FloatField(
                            widget=forms.NumberInput(
                                attrs={
                                    'class': 'block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                    'id': 'kg_2'
-                               }),required=False)
+                               }),required=True)
 
     componente_3 = forms.CharField(max_length=100,
                                    widget=forms.TextInput(

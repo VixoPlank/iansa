@@ -10,6 +10,6 @@ def agregarRecetas(request):
         form=FormularioReceta(request.POST)
         if(form.is_valid()):
             form.save()
-            return redirect('/home/agregar-receta/')
+            return redirect('/agregar-receta/')
     data ={'form':form}
     return render(request, 'fabrication.html', data)
