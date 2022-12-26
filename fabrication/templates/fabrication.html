@@ -1,0 +1,308 @@
+{% extends 'base.html' %} {% load static %} {% block title %} IANSA - Agregar
+receta {% endblock %}
+<script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+
+{% block content%}
+<section
+  class="grid justify-center lg:col-span-4 mt-10 h-full bg-gray-300 rounded-lg border-solid border-2 border-green-600 shadow-2xl mx-20"
+>
+  <form method="POST">
+    <div class="container mt-5">
+      <img
+        src="{% static 'img/clipboard.png' %}"
+        alt=""
+        class="w-20 float-right mr-64"
+      />
+      <h3 class="text-5xl text-justify text-green-600 mb-8">
+        Registro de Receta
+      </h3>
+    </div>
+    {% csrf_token %}
+    <div class="relative pb-4">
+      {{form.producto}}
+      <label
+        for="{{form.producto.id_for_label}}"
+        class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+        >Producto</label
+      >
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_1}}
+        <label
+          for="{{form.componente_1.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 1</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_1}}
+        <label
+          for="{{form.codigo_1.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative justify-start">
+        {{form.kg_1}}
+        <label
+          for="{{form.kg_1.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_2}}
+        <label
+          for="{{form.componente_2.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 2</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_2}}
+        <label
+          for="{{form.codigo_2.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_2}}
+        <label
+          for="{{form.kg_2.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_3}}
+        <label
+          for="{{form.codigo_3.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 3</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_3}}
+        <label
+          for="{{form.codigo_3.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_3}}
+        <label
+          for="{{form.kg_3.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_4}}
+        <label
+          for="{{form.componente_3.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 4</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_4}}
+        <label
+          for="{{form.codigo_3.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_4}}
+        <label
+          for="{{form.kg_3.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_5}}
+        <label
+          for="{{form.componente_4.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 5</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_5}}
+        <label
+          for="{{form.codigo_4.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_5}}
+        <label
+          for="{{form.kg_4.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_6}}
+        <label
+          for="{{form.componente_5.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 6</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_6}}
+        <label
+          for="{{form.codigo_5.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_6}}
+        <label
+          for="{{form.kg_5.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_7}}
+        <label
+          for="{{form.componente_6.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 7</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_7}}
+        <label
+          for="{{form.codigo_6.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_7}}
+        <label
+          for="{{form.kg_6.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_8}}
+        <label
+          for="{{form.componente_7.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 8</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_8}}
+        <label
+          for="{{form.codigo_7.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_8}}
+        <label
+          for="{{form.kg_7.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_9}}
+        <label
+          for="{{form.componente_8.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 9</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_9}}
+        <label
+          for="{{form.codigo_8.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_9}}
+        <label
+          for="{{form.kg_9.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 md:gap-6 mt-5 place-items-center">
+      <div class="relative">
+        {{form.componente_10}}
+        <label
+          for="{{form.componente_10.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Componente 10</label
+        >
+      </div>
+      <div class="relative">
+        {{form.codigo_10}}
+        <label
+          for="{{form.codigo_10.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Cód.Producto</label
+        >
+      </div>
+      <div class="relative">
+        {{form.kg_10}}
+        <label
+          for="{{form.kg_10.id_for_label}}"
+          class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >KG</label
+        >
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 shadow-lg shadow-green-500/50 font-medium rounded-lg text-sm px-14 py-4 text-center mr-2 mb-2 mt-10"
+    >
+      Registrar
+    </button>
+  </form>
+</section>
+<div class="p-20"></div>
+{% endblock %}

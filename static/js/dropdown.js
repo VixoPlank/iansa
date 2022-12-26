@@ -4,6 +4,12 @@ function dropdownFabricacion() {
 }
 dropdownFabricacion();
 
+function dropdownMaterias() {
+  document.querySelector("#submenuMateriasPrimas").classList.toggle("hidden");
+  document.querySelector("#arrowMateriasPrimas").classList.toggle("rotate-0");
+}
+dropdownMaterias();
+
 // Las 3 lineas cuando aparece la version mobile
 function openSidebar() {
   document.querySelector(".sidebar").classList.toggle("hidden");
