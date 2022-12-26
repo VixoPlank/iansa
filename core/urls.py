@@ -22,6 +22,6 @@ urlpatterns = [
     #home
     path('home/', include('home.urls')),
     # fabrication
-    path('agregar-recetas/', include('fabrication.urls')),
+    path('agregar-receta/', include('fabrication.urls')),
     path('admin/', admin.site.urls),
 ]
