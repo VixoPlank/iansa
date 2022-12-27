@@ -23,5 +23,7 @@ urlpatterns = [
     path('home/', include('home.urls')),
     # fabrication
     path('agregar-receta/', include('fabrication.urls')),
+    # agregar materias
+    path('panel-materias/', include('materials.urls')),
     path('admin/', admin.site.urls),
 ]
