@@ -31,7 +31,7 @@
       </span>
       <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-1/5 overflow-y-auto text-center bg-green-800">
         <!-- Panel de control -->
-        <div class="text-gray-100 text-xl rounded-2xl bg-black">
+        <div class="text-gray-100 text-xl rounded-2xl bg-green-600">
           <div class="p-2.5 mt-1 flex items-center">
             <img src="{% static '/img/favicon.png' %}" class="w-9" alt="" />
             <h1 class="font-bold text-gray-200 text-[15px] ml-3">
@@ -76,10 +76,16 @@
               <i class="fa-solid fa-plus p-2"></i> Agregar
             </h1>
           </a>
+          <a href="{% url 'menu-recetas' %}">
+            <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
+              <i class="fa-solid fa-clipboard-list p-2"></i>
+              Menú
+            </h1>
+          </a>
           <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
             <i class="fa-solid fa-print p-2"></i>
             Imprimir
-          </h1>
+          </h1> 
         </div>
         <!-- Cierre de Fabricación dropdown -->
 
@@ -99,16 +105,22 @@
 
         <!-- Inicio de Materias Primas dropdown -->
         <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold" id="submenuMateriasPrimas">
+          <a href="{% url 'menu-materias' %}">
+            <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
+              <i class="fa-solid fa-clipboard-list p-2"></i>
+              Menú
+            </h1>
+          </a>
           <a href="{% url 'registrar-materias' %}">
             <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
               <i class="fa-solid fa-plus p-2.5"></i>
               Registrar
             </h1>
           </a>
-          <a href="{% url 'menu-materias' %}">
+          <a href="{% url 'tabla-entradas' %}">
             <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
-              <i class="fa-solid fa-clipboard-list p-2"></i>
-              Menú
+              <i class="fa-solid fa-plus p-2.5"></i>
+              Entradas
             </h1>
           </a>
         </div>
