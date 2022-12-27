@@ -99,22 +99,18 @@
 
         <!-- Inicio de Materias Primas dropdown -->
         <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold" id="submenuMateriasPrimas">
-          <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
-            <i class="fa-solid fa-plus p-2.5"></i>
-            Registrar
-          </h1>
-          <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
-            <i class="fa-solid fa-dolly p-2"></i>
-            Ingresar
-          </h1>
-          <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
-            <i class="fa-solid fa-pen-to-square p-2.5"></i>
-            Editar
-          </h1>
-          <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
-            <i class="fa-solid fa-trash p-2.5"></i>
-            Eliminar
-          </h1>
+          <a href="{% url 'registrar-materias' %}">
+            <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
+              <i class="fa-solid fa-plus p-2.5"></i>
+              Registrar
+            </h1>
+          </a>
+          <a href="{% url 'menu-materias' %}">
+            <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
+              <i class="fa-solid fa-clipboard-list p-2"></i>
+              Menú
+            </h1>
+          </a>
         </div>
         <!-- Cierre de Materias Primas dropdown -->
 
