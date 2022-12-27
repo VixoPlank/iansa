@@ -8,12 +8,12 @@
 <div
   class="grid lg:col-span-4 overflow-x-auto relative shadow-md sm:rounded-lg mx-10 my-10"
 >
-  <table class="text-sm text-left text-gray-500">
+  <table class="text-sm text-left text-gray-500" id="datatable">
     <thead class="text-xs text-center text-white uppercase bg-green-700">
       <tr>
         <th scope="col" class="py-3 px-6">Código Materia Prima</th>
         <th scope="col" class="py-3 px-6 border-x">Nombre Materia Prima</th>
-        <th scope="col" class="py-3 px-6 border-x">Existencia</th>
+        <th scope="col" class="py-3 px-6 border-x">Descripción</th>
         <th scope="col" class="py-3 px-6">--</th>
       </tr>
     </thead>
@@ -27,8 +27,8 @@
           I0 {{m.codigo}}
         </th>
         <td class="py-4 px-6">{{m.nombre}}</td>
-        <td class="py-4 px-6">{{m.existencia}}</td>
-        <td class="flex py-4 px-6 gap-4">
+        <td class="py-4 px-6">{{m.descripcion}}</td>
+        <td class="flex py-4 px-6 gap-4 justify-center">
           <a
             href="editar-materias/{{m.codigo}}"
             class="font-medium text-blue-600 hover:underline"
@@ -50,4 +50,5 @@
     </tbody>
   </table>
 </div>
+
 {% endblock %}

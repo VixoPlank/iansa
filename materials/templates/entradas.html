@@ -22,25 +22,40 @@
                     class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Nombre Materia</label>
             </div>
 
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-4">
             <div class="relative pb-4">
                 {{form.existencia}}
                 <label for="{{form.existencia.id_for_label}}"
                     class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Existencia</label>
             </div>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-4">
-            <div class="relative pb-4">
-                {{form2.ni}}
-                <label for="{{form2.ni.id_for_label}}"
-                    class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">NI</label>
-            </div>
 
             <div class="relative pb-4">
                 {{form2.cantidad}}
-                <label for="{{form.cantidad.id_for_label}}"
+                <label for="{{form2.cantidad.id_for_label}}"
                     class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Cantidad
                     a Ingresar</label>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-4">
+            <div class="relative pb-4">
+                {{form2.oc}}
+                <label for="{{form2.oc.id_for_label}}"
+                    class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Orden de Compra</label>
+            </div>
+
+            <div class="relative pb-4">
+                {{form2.nlote}}
+                <label for="{{form2.nlote.id_for_label}}"
+                    class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">N° Lote</label>
+            </div>
+
+            <div class="relative pb-4">
+                {{form2.proveedor}}
+                <label for="{{form2.proveedor.id_for_label}}"
+                    class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Proveedor</label>
             </div>
         </div>
 
@@ -70,15 +85,19 @@
 </div>
 
 <script>         
-function cargar() {        
-    min = Math.ceil(1000);  
-    max = Math.floor(10000);
-    n = Math.floor(Math.random() * (max - min + 1) + min)
-    var exist = parseFloat(document.getElementById("existencia").value)             
-    var ingreso = parseFloat(document.getElementById("cantidad").value)                        
-    document.getElementById("existencia").value = exist + ingreso         
-    document.getElementById("ni").value = n   
-}     
+function cargar() {
+    var exist = parseFloat(document.getElementById("existencia").value)
+    var ingreso = parseFloat(document.getElementById("cantidad").value)
+    var nlote = parseInt(document.getElementById("nlote").value)
+    var oc = parseInt(document.getElementById("oc").value)
+    var proveedor = document.getElementById("proveedor").value
+    var fingreso = document.getElementById("fecha_ingreso").value
+    var fvencimiento = document.getElementById("fecha_vencimiento").value
+    if (ingreso < 1 || fingreso == "" || fvencimiento=="" || oc == null || nlote == null || proveedor == "" ) {
+        ingreso = 0;
+    }
+    document.getElementById("existencia").value = exist + ingreso
+} 
 </script>
 
 {% endblock %}

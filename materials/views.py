@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import FormularioEntradas, FormularioMateria
+from .forms import FormularioEntradas, FormularioMateria, FormularioMateriaVista
 from .models import Materia, Entradas
 
 # Create your views here.
@@ -24,10 +24,10 @@ def agregarMaterias(request):
 def agregarentradas(request,id):
     entradas = Entradas.objects.all()
     existencia = Materia.objects.get(codigo=id)
-    form=FormularioMateria(instance=existencia)
+    form=FormularioMateriaVista(instance=existencia)
     form2=FormularioEntradas(instance=existencia)
     if(request.method=='POST'):
-        form=FormularioMateria(request.POST,instance=existencia)
+        form=FormularioMateriaVista(request.POST,instance=existencia)
         if(form.is_valid()):
             form.save() 
         form2=FormularioEntradas(request.POST)
@@ -52,3 +52,8 @@ def eliminarmateria(request, id):
     materia = Materia.objects.get(codigo = id)
     materia.delete()
     return redirect('/panel-materias/')
+
+def entradas(request):
+    entradas = Entradas.objects.all()
+    data = {'entradas':entradas}
+    return render(request, 'tabla_entradas.html', data)

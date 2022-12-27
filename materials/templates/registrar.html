@@ -1,28 +1,35 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
+{% block title %} IANSA - Registrar materia {% endblock %}
 <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js%22%3E"></script>
     {% block content%}
-    <section class="grid justify-center lg:col-span-4 mt-10 h-3/4">
-        <form method="POST" class="bg-gray-400 px-10 py-5 rounded-lg" >
+    <section class="grid justify-center lg:col-span-4 mt-56 h-1/2">
+        <form method="POST" class="bg-gray-400 px-16 py-5 rounded-lg " >
+          <div class="grid lg:col-span-4">
+            <img
+            src="{% static 'img/clipboard.png' %}"
+            alt=""
+            class="w-20 float-right ml-96 "
+          />
+            <h3 class="text-4xl pb-3 text-justify">Registro de materia prima</h3>
+          </div>
           {% csrf_token %}
-            <div class="relative pb-4">
+            <div class="relative pb-4 mx-36">
                 {{form.codigo}}
                 <label for="{{form.codigo_materia.id_for_label}}" class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Código Materia Prima</label>
             </div>
 
-            <div class="relative pb-4">
+            <div class="relative pb-4 mx-36">
                 {{form.nombre}}
                 <label for="{{form.nombre.id_for_label}}" class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Nombre Materia Prima</label>
             </div>
 
-            <div class="relative pb-4">
+            <div class="relative pb-4 mx-36">
                 {{form.descripcion}}
                 <label for="{{form.descripcion.id_for_label}}" class="absolute text-sm text-green-500 dark:text-green-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Descripción</label>
             </div>
             
-          <button type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-10 py-2.5 text-center mr-2 mb-2 mt-6">Registrar</button>
+          <button type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-10 py-2.5 text-center mr-2 mb-2 mt-6 mx-36">Registrar</button>
         </form>
       </section>
 </div>
