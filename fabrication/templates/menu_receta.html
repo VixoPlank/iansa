@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} IANSA - Panel de control {% endblock %}
+<!--  -->
+
+{% block content%}
+
+<div
+  class="grid lg:col-span-4 overflow-x-auto relative shadow-md sm:rounded-lg mx-10 my-10"
+>
+  <table class="text-sm text-left text-gray-500">
+    <thead class="text-xs text-center text-white uppercase bg-green-700">
+      <tr>
+        <th scope="col" class="py-3 px-6">ID receta</th>
+        <th scope="col" class="py-3 px-6 border-x">Nombre de producto</th>
+        <th scope="col" class="py-3 px-6">--</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      {% for m in recetas %}
+      <tr class="bg-gray-100 border-b">
+        <td class="py-4 px-6">{{m.id_receta}}</td>
+        <td class="py-4 px-6">{{m.producto}}</td>
+        <td class="flex py-4 px-6 gap-4 justify-center">
+          <a
+            href="editar-materias/{{m.codigo}}"
+            class="font-medium text-blue-600 hover:underline"
+            >Editar</a
+          >
+          <a
+            href="eliminar-materias/{{m.codigo}}"
+            class="font-medium text-blue-600 hover:underline"
+            >Eliminar</a
+          >
+          <a
+            href="entradas-materias/{{m.codigo}}"
+            class="font-medium text-blue-600 hover:underline"
+            >Fabricación</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
