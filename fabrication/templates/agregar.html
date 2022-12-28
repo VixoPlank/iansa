@@ -1,6 +1,5 @@
-{% extends 'base.html' %} {% load static %}
-<!--  -->
-{% block title %} IANSA - Agregar receta {% endblock %}
+{% extends 'base.html' %} {% load static %} {% block title %} IANSA - Agregar
+receta {% endblock %}
 <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
 
 {% block content%}
@@ -15,7 +14,7 @@
         class="w-20 float-right mr-64"
       />
       <h3 class="text-5xl text-justify text-green-600 mb-8">
-        Registro de Receta
+        {{titulo}} de Receta
       </h3>
     </div>
     {% csrf_token %}
@@ -301,8 +300,15 @@
       type="submit"
       class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 shadow-lg shadow-green-500/50 font-medium rounded-lg text-sm px-14 py-4 text-center mr-2 mb-2 mt-10"
     >
-      Registrar
+      {{titulo}}
     </button>
+    <a
+      href="/agregar-receta"
+      type="submit"
+      class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 shadow-lg shadow-red-500/50 font-medium rounded-lg text-sm px-14 py-4 text-center mr-8 mb-2 mt-10 float-right"
+    >
+      Volver
+    </a>
   </form>
 </section>
 <div class="p-20"></div>

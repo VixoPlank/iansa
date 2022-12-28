@@ -1,0 +1,916 @@
+{% extends 'base.html' %} {% load static %} {% block title %} IANSA - Agregar
+receta {% endblock %}
+<script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+
+{% block content%}
+<section
+  class="grid justify-center lg:col-span-4 mt-5 h-full bg-gray-300 rounded-lg border-solid border-2 border-green-600 shadow-2xl mx-2"
+>
+  <div class="container mt-5">
+    <img
+      src="{% static 'img/clipboard.png' %}"
+      alt=""
+      class="w-20 float-right mr-64"
+    />
+    <h3 class="text-5xl text-justify text-green-600 mb-8">
+      Registro de Fabricación
+    </h3>
+  </div>
+  <div class="flex">
+    <div>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="relative pb-4">
+          {{form.lote}}
+          <label
+            for="{{form.lote.id_for_label}}"
+            class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+            >Lote</label
+          >
+        </div>
+
+        <div class="relative pb-4">
+          {{form.producto}}
+          <label
+            for="{{form.producto.id_for_label}}"
+            class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+            >Producto</label
+          >
+        </div>
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_1}}
+            <label
+              for="{{form.componente_1.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 1</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_1}}
+            <label
+              for="{{form.codigo_1.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_1}}
+            <label
+              for="{{form.kg_1.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_1}}
+            <label
+              for="{{form.NI1_1.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_1}}
+            <label
+              for="{{form.NI2_1.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_2}}
+            <label
+              for="{{form.componente_2.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 2</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_2}}
+            <label
+              for="{{form.codigo_2.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_2}}
+            <label
+              for="{{form.kg_2.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_2}}
+            <label
+              for="{{form.NI1_2.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_2}}
+            <label
+              for="{{form.NI2_2.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_3}}
+            <label
+              for="{{form.componente_3.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 3</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_3}}
+            <label
+              for="{{form.codigo_3.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_3}}
+            <label
+              for="{{form.kg_3.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_3}}
+            <label
+              for="{{form.NI1_3.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_3}}
+            <label
+              for="{{form.NI2_3.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_4}}
+            <label
+              for="{{form.componente_4.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 4</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_4}}
+            <label
+              for="{{form.codigo_4.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_4}}
+            <label
+              for="{{form.kg_4.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_4}}
+            <label
+              for="{{form.NI1_4.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_4}}
+            <label
+              for="{{form.NI2_4.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_5}}
+            <label
+              for="{{form.componente_5.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 5</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_5}}
+            <label
+              for="{{form.codigo_5.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_5}}
+            <label
+              for="{{form.kg_5.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_5}}
+            <label
+              for="{{form.NI1_5.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_5}}
+            <label
+              for="{{form.NI2.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_6}}
+            <label
+              for="{{form.componente_6.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 6</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_6}}
+            <label
+              for="{{form.codigo_6.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_6}}
+            <label
+              for="{{form.kg_6.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_6}}
+            <label
+              for="{{form.NI1_6.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_6}}
+            <label
+              for="{{form.NI2_6.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_7}}
+            <label
+              for="{{form.componente_7.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 7</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_7}}
+            <label
+              for="{{form.codigo_7.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_7}}
+            <label
+              for="{{form.kg_7.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_7}}
+            <label
+              for="{{form.NI1_7.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_7}}
+            <label
+              for="{{form.NI2_7.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_8}}
+            <label
+              for="{{form.componente_8.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 8</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_8}}
+            <label
+              for="{{form.codigo_8.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_8}}
+            <label
+              for="{{form.kg_8.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_8}}
+            <label
+              for="{{form.NI1_8.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_8}}
+            <label
+              for="{{form.NI2_8.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_9}}
+            <label
+              for="{{form.componente_9.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 9</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_9}}
+            <label
+              for="{{form.codigo_9.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_9}}
+            <label
+              for="{{form.kg_9.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_9}}
+            <label
+              for="{{form.NI1_9.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_9}}
+            <label
+              for="{{form.NI2_9.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+
+        <br />
+
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            {{form.componente_10}}
+            <label
+              for="{{form.componente_10.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Componente 10</label
+            >
+          </div>
+
+          <div class="relative">
+            {{form.codigo_10}}
+            <label
+              for="{{form.codigo_10.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Cód.Producto</label
+            >
+          </div>
+          <div class="relative">
+            {{form.kg_10}}
+            <label
+              for="{{form.kg_10.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >KG</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI1_10}}
+            <label
+              for="{{form.NI1_10.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI1</label
+            >
+          </div>
+          <div class="relative">
+            {{form.NI2_10}}
+            <label
+              for="{{form.NI2_10.id_for_label}}"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >NI2</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="relative">
+          {{form.observacion}}
+          <label
+            for="{{form.observacion.id_for_label}}"
+            class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+            >Observacion</label
+          >
+        </div>
+        <button
+          type="submit"
+          class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 shadow-lg shadow-green-500/50 font-medium rounded-lg text-sm px-14 py-4 text-center mr-2 mb-3 mt-11"
+        >
+          Registrar
+        </button>
+      </form>
+    </div>
+    <div class="ml-5">
+      <form>
+        {% csrf_token %}
+        <br /><br /><br /><br /><br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative mt-4">
+            <input
+              type="number"
+              name="exist1"
+              id="exist1"
+              value="{{exist1}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist1"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative mt-4">
+            <input
+              type="text"
+              name="sal1"
+              id="sal1"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal1"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist2"
+              id="exist2"
+              value="{{exist2}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist2"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal2"
+              id="sal2"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal2"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist3"
+              id="exist3"
+              value="{{exist3}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist3"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal3"
+              id="sal3"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal3"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist4"
+              id="exist4"
+              value="{{exist4}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist4"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal4"
+              id="sal4"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal4"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist5"
+              id="exist5"
+              value="{{exist5}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist5"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal5"
+              id="sal5"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal5"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist6"
+              id="exist6"
+              value="{{exist6}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist6"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal6"
+              id="sal6"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal6"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist7"
+              id="exist7"
+              value="{{exist7}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist7"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal7"
+              id="sal7"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal7"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist8"
+              id="exist8"
+              value="{{exist8}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist8"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal8"
+              id="sal8"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal8"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist9"
+              id="exist9"
+              value="{{exist9}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist9"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal9"
+              id="sal9"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal9"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br />
+        <div class="flex flex-row md:gap-6">
+          <div class="relative">
+            <input
+              type="number"
+              name="exist10"
+              id="exist10"
+              value="{{exist10}}"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="exist10"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Existencia</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="sal10"
+              id="sal10"
+              class="w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+            />
+            <label
+              for="sal10"
+              class="absolute text-sm text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              >Saldo</label
+            >
+          </div>
+        </div>
+        <br>
+        <a
+          href="/agregar-receta"
+          type="submit"
+          class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 shadow-lg shadow-red-500/50 font-medium rounded-lg text-sm px-14 py-4 mt-24 text-center float-right"
+        >
+          Volver
+        </a>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="p-20"></div>
+<script>
+  var exist1 = document.getElementById("exist1").value;
+  var exist2 = document.getElementById("exist2").value;
+  var exist3 = document.getElementById("exist3").value;
+  var exist4 = document.getElementById("exist4").value;
+  var exist5 = document.getElementById("exist5").value;
+  var exist6 = document.getElementById("exist6").value;
+  var exist7 = document.getElementById("exist7").value;
+  var exist8 = document.getElementById("exist8").value;
+  var exist9 = document.getElementById("exist9").value;
+  var exist10 = document.getElementById("exist10").value;
+
+  var kg1 = document.getElementById("kg_1").value;
+  var kg2 = document.getElementById("kg_2").value;
+  var kg3 = document.getElementById("kg_3").value;
+  var kg4 = document.getElementById("kg_4").value;
+  var kg5 = document.getElementById("kg_5").value;
+  var kg6 = document.getElementById("kg_6").value;
+  var kg7 = document.getElementById("kg_7").value;
+  var kg8 = document.getElementById("kg_8").value;
+  var kg9 = document.getElementById("kg_9").value;
+  var kg10 = document.getElementById("kg_10").value;
+
+  var c1 = document.getElementById("componente_1").value;
+  var c2 = document.getElementById("componente_2").value;
+  var c3 = document.getElementById("componente_3").value;
+  var c4 = document.getElementById("componente_4").value;
+  var c5 = document.getElementById("componente_5").value;
+  var c6 = document.getElementById("componente_6").value;
+  var c7 = document.getElementById("componente_7").value;
+  var c8 = document.getElementById("componente_8").value;
+  var c9 = document.getElementById("componente_9").value;
+  var c10 = document.getElementById("componente_10").value;
+
+  if (exist1 >= kg1) {
+    document.getElementById("sal1").value = exist1 - kg1;
+  } else {
+    document.getElementById("sal1").value = "Insuficiente";
+  }
+  if (exist2 >= kg2) {
+    document.getElementById("sal2").value = exist2 - kg2;
+  } else {
+    document.getElementById("sal2").value = "Insuficiente";
+  }
+  if (exist3 >= kg3) {
+    document.getElementById("sal3").value = exist3 - kg3;
+  } else {
+    document.getElementById("sal3").value = "Insuficiente";
+  }
+  if (exist4 >= kg4) {
+    document.getElementById("sal4").value = exist4 - kg4;
+  } else {
+    document.getElementById("sal4").value = "Insuficiente";
+  }
+  if (exist5 >= kg5) {
+    document.getElementById("sal5").value = exist5 - kg5;
+  } else {
+    document.getElementById("sal5").value = "Insuficiente";
+  }
+  if (exist6 >= kg6) {
+    document.getElementById("sal6").value = exist6 - kg6;
+  } else {
+    document.getElementById("sal6").value = "Insuficiente";
+  }
+  if (exist7 >= kg7) {
+    document.getElementById("sal7").value = exist7 - kg7;
+  } else {
+    document.getElementById("sal7").value = "Insuficiente";
+  }
+  if (exist8 >= kg8) {
+    document.getElementById("sal8").value = exist8 - kg8;
+  } else {
+    document.getElementById("sal8").value = "Insuficiente";
+  }
+  if (exist9 >= kg9) {
+    document.getElementById("sal9").value = exist9 - kg9;
+  } else {
+    document.getElementById("sal9").value = "Insuficiente";
+  }
+  if (exist10 >= kg10) {
+    document.getElementById("sal10").value = exist10 - kg10;
+  } else {
+    document.getElementById("sal10").value = "Insuficiente";
+  }
+</script>
+{% endblock %}

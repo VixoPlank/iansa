@@ -71,21 +71,17 @@
 
         <!-- Inicio de Fabricación dropdown -->
         <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold" id="submenuFabricacion">
-          <a href="{% url 'agregar-receta' %}">
-            <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
-              <i class="fa-solid fa-plus p-2"></i> Agregar
-            </h1>
-          </a>
           <a href="{% url 'menu-recetas' %}">
             <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
               <i class="fa-solid fa-clipboard-list p-2"></i>
               Menú
             </h1>
           </a>
-          <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
-            <i class="fa-solid fa-print p-2"></i>
-            Imprimir
-          </h1> 
+          <a href="{% url 'agregar-receta' %}">
+            <h1 class="cursor-pointer p-2 hover:bg-green-700 rounded-md mt-1">
+              <i class="fa-solid fa-plus p-2"></i> Agregar
+            </h1>
+          </a>
         </div>
         <!-- Cierre de Fabricación dropdown -->
 

@@ -10,7 +10,7 @@ from . import views
 urlpatterns = [
     path('', views.menu, name='menu-recetas'),
     path('agregar-receta', views.agregarRecetas, name='agregar-receta'),
-    # path('fabricacion-receta/<int:id>', views.agregarentradas, name='fabricacion-receta'),
-    # path('editar-receta/<int:id>', views.editarreceta, name = 'editar-receta'),
-    # path('eliminar-receta/<int:id>', views.eliminarmateria, name = 'eliminar-receta'),
+    path('fabricacion-receta/<int:id_receta>', views.agregarfabricacion, name='fabricacion-receta'),
+    path('editar-receta/<int:id_receta>', views.editarRecetas, name = 'editar-receta'),
+    path('eliminar-receta/<int:id_receta>', views.eliminarRecetas, name = 'eliminar-receta'),
 ]
