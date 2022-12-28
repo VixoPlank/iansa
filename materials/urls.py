@@ -14,4 +14,6 @@ urlpatterns = [
     path('eliminar-materias/<int:id>', views.eliminarmateria, name = 'eliminar-materias'),
     path('reportes-materias/', views.eliminarmateria, name = 'reportes-materias'),
     path('tabla-entradas/', views.entradas, name = 'tabla-entradas'),
+    # Reporte
+    path('reportes/', views.reportes, name = 'reportes'),
 ]
