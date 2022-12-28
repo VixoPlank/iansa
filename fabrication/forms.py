@@ -307,7 +307,7 @@ class FormularioFabricacion(forms.ModelForm):
                                        'class': 'w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                        'id': 'NI1_1'
                                        'max_len'
-                                   }),required=False)
+                                   }),required=True)
 
     NI2_1 = forms.IntegerField(
                                widget=forms.NumberInput(
@@ -344,7 +344,7 @@ class FormularioFabricacion(forms.ModelForm):
                                        'class': 'w-24 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                        'id': 'NI1_2'
                                        'max_len'
-                                   }),required=False)
+                                   }),required=True)
 
     NI2_2 = forms.IntegerField(
                                widget=forms.NumberInput(
