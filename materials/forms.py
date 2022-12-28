@@ -9,63 +9,31 @@ class FormularioMateria(forms.ModelForm):
     codigo = forms.IntegerField(
                                widget=forms.NumberInput(
                                    attrs={
-                                       'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                       'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                        'id': 'codigo',
                                    }))
 
     nombre = forms.CharField(max_length=100,
                                     widget=forms.TextInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'nombre'
                                         }))
 
     descripcion = forms.CharField(max_length=100,
                                     widget=forms.TextInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'descripcion'
-                                        }), required=False) 
+                                        })) 
 
     existencia = forms.FloatField(
                                     widget=forms.NumberInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'existencia'
                                         }), required=False)
 
-    class Meta:
-        model = Materia
-        fields = '__all__'
-
-    codigo = forms.IntegerField(
-                               widget=forms.NumberInput(
-                                   attrs={
-                                       'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
-                                       'id': 'codigo'
-                                   }))
-
-    nombre = forms.CharField(max_length=100,
-                                    widget=forms.TextInput(
-                                        attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
-                                            'id': 'nombre'
-                                        }))
-
-    descripcion = forms.CharField(max_length=100,
-                                    widget=forms.TextInput(
-                                        attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
-                                            'id': 'descripcion'
-                                        }), required=False) 
-
-    existencia = forms.FloatField(
-                                    widget=forms.NumberInput(
-                                        attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
-                                            'id': 'existencia', 
-                                            'readonly': 'readonly'
-                                        }), required=False)
 
 
 
@@ -78,7 +46,7 @@ class FormularioEntradas(forms.ModelForm):
     ni = forms.IntegerField(
                                     widget=forms.NumberInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'ni',
                                             'min':'1000'
                                         }), required=False)
@@ -86,7 +54,7 @@ class FormularioEntradas(forms.ModelForm):
     cantidad = forms.FloatField(
                                     widget=forms.NumberInput(
                                         attrs={
-                                            'class': 'w-80 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'cantidad',
                                             'min':'1',
                                         }))
@@ -94,29 +62,29 @@ class FormularioEntradas(forms.ModelForm):
     oc = forms.IntegerField(
                                     widget=forms.NumberInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'oc',
                                         }))
 
-    nlote = forms.IntegerField(
-                                    widget=forms.NumberInput(
+    nlote = forms.CharField(
+                                    widget=forms.TextInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'nlote'
                                         }))
 
     fecha_ingreso = forms.CharField(
                                     widget=forms.DateTimeInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'fecha_ingreso',
-                                            'type': 'datetime-local'
+                                            'type': 'date'
                                         }))
 
     fecha_vencimiento = forms.CharField(
                                     widget=forms.DateInput(
                                         attrs={
-                                            'class': 'w-80 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'fecha_vencimiento',
                                             'type': 'date'
                                         })) 
@@ -124,9 +92,11 @@ class FormularioEntradas(forms.ModelForm):
     proveedor = forms.CharField(max_length=50,
                                     widget=forms.TextInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
-                                            'id': 'proveedor'
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'id': 'proveedor',
+                                            'style':'text-transform: uppercase'
                                         }))
+    
 
 class FormularioMateriaVista(forms.ModelForm):
     class Meta:
@@ -136,7 +106,7 @@ class FormularioMateriaVista(forms.ModelForm):
     codigo = forms.IntegerField(
                                widget=forms.NumberInput(
                                    attrs={
-                                       'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                       'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                        'id': 'codigo',
                                        'readonly':'readonly'
                                    }))
@@ -144,7 +114,7 @@ class FormularioMateriaVista(forms.ModelForm):
     nombre = forms.CharField(max_length=100,
                                     widget=forms.TextInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'nombre',
                                             'readonly':'readonly'
                                         }))
@@ -152,15 +122,15 @@ class FormularioMateriaVista(forms.ModelForm):
     descripcion = forms.CharField(max_length=100,
                                     widget=forms.TextInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'descripcion',
                                             'readonly':'readonly'
-                                        }), required=False) 
+                                        })) 
 
     existencia = forms.FloatField(
                                     widget=forms.NumberInput(
                                         attrs={
-                                            'class': 'w-60 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
+                                            'class': 'w-64 h-16 block rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer',
                                             'id': 'existencia',
                                             'readonly':'readonly'
                                         }), required=False)
