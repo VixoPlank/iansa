@@ -21,10 +21,15 @@
     ></script>
     <style>
       .body-bg {
-        background-image: url(../../static/img/bglogin.jpg);
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url(../../static/img/bglogin.jpg);
       }
     </style>
   </head>
+
   <body class="body-bg h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0">
     <main
       class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl"
@@ -44,7 +49,45 @@
       <section>
         <!--class="mt-10" sin esta clase login queda centrado totalmente-->
         <form class="flex flex-col" method="POST" action="#">
-          {% csrf_token %}
+          {% csrf_token %} {% if form.username.errors%}
+          <div class="pt-3 rounded bg-gray-200">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2 ml-3"
+              for="rut"
+              >RUT</label
+            >
+            <input
+              type="text"
+              id="rut"
+              name="{{form.username.name}}"
+              class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
+            />
+          </div>
+          <!--ALERT-->
+          <div
+            class="flex p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-b-lg rounded-bl-lg dark:bg-red-200 dark:text-red-800"
+            role="alert"
+          >
+            <svg
+              aria-hidden="true"
+              class="flex-shrink-0 inline w-5 h-5 mr-3"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+              <span class="font-medium">{{ form.username.errors }}</span>
+            </div>
+          </div>
+          <!--FIN ALERT-->
+          {% else %}
           <div class="mb-6 pt-3 rounded bg-gray-200">
             <label
               class="block text-gray-700 text-sm font-bold mb-2 ml-3"
@@ -58,6 +101,45 @@
               class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
             />
           </div>
+          {% endif%} {% if form.password.errors%}
+          <div class="pt-3 rounded bg-gray-200">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2 ml-3"
+              for="password"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="{{form.password.name}}"
+              class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
+            />
+          </div>
+          <!--ALERT-->
+          <div
+            class="flex p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-b-lg rounded-bl-lg dark:bg-red-200 dark:text-red-800"
+            role="alert"
+          >
+            <svg
+              aria-hidden="true"
+              class="flex-shrink-0 inline w-5 h-5 mr-3"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+              <span class="font-medium">{{ form.password.errors }}</span>
+            </div>
+          </div>
+          <!--FIN ALERT-->
+          {% else %}
           <div class="mb-6 pt-3 rounded bg-gray-200">
             <label
               class="block text-gray-700 text-sm font-bold mb-2 ml-3"
@@ -71,8 +153,10 @@
               class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
             />
           </div>
+
+          {% endif %}
           <button
-            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 mt-5 rounded shadow-lg hover:shadow-xl transition duration-200"
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 mt-6"
             type="submit"
           >
             Iniciar sesión

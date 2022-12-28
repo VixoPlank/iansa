@@ -6,16 +6,16 @@ from .models import Materia, Entradas
 # Create your views here.
 
 @login_required
-def menu(request):
-    materias = Materia.objects.all()
-    data = {'materias':materias}
-    return render(request, 'menu.html', data)
-
-@login_required
 def reportes(request):
     materias = Materia.objects.all()
     data = {'materias':materias}
     return render(request, 'reportes.html', data)
+
+@login_required
+def menu(request):
+    materias = Materia.objects.all()
+    data = {'materias':materias}
+    return render(request, 'menu.html', data)
 
 @login_required
 def agregarMaterias(request):
@@ -48,14 +48,15 @@ def agregarentradas(request,id):
 @login_required
 def editarMaterias(request, id):
     materia = Materia.objects.get(codigo = id)
+    form2 = FormularioMateriaVista(instance=materia)
     form = FormularioMateria(instance = materia)
     if(request.method == 'POST'):
         form = FormularioMateria(request.POST,instance = materia) #Le entrego los datos a traves del POST
         if(form.is_valid()): #Si es valido los datos los guardo
             form.save()
             return redirect('/panel-materias/')
-    data = {'form': form}
-    return render(request, 'registrar.html', data)
+    data = {'form': form, 'form2':form2}
+    return render(request, 'editar.html', data)
 
 @login_required
 def eliminarmateria(request, id):
@@ -68,3 +69,4 @@ def entradas(request):
     entradas = Entradas.objects.all()
     data = {'entradas':entradas}
     return render(request, 'tabla_entradas.html', data)
+

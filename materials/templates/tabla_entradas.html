@@ -4,39 +4,52 @@
 <!--  -->
 
 {% block content%}
-
-<div
-  class="grid lg:col-span-4 overflow-x-auto relative shadow-md sm:rounded-lg mx-10 my-10"
->
-  <table class="text-sm text-left text-gray-500">
-    <thead class="text-xs text-center text-white uppercase bg-green-700">
-      <tr>
-        <th scope="col" class="py-3 px-6">Código Materia Prima</th>
-        <th scope="col" class="py-3 px-6 border-x">Nombre Materia Prima</th>
-        <th scope="col" class="py-3 px-6 border-x">Cantidad Ingresada</th>
-        <th scope="col" class="py-3 px-6 border-x">Fecha Ingreso</th>
-        <th scope="col" class="py-3 px-6 border-x">Fecha Vencimiento</th>
-        <th scope="col" class="py-3 px-6 border-x">NI</th>
-      </tr>
-    </thead>
-    <tbody class="text-center">
-      {% for m in entradas %}
-      <tr class="bg-gray-100 border-b">
-        <th
-          scope="row"
-          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
-        >
-          I0 {{m.codigo}}
-        </th>
-        <td class="py-4 px-6">{{m.nombre}}</td>
-        <td class="py-4 px-6">{{m.cantidad}} kg</td>
-        <td class="py-4 px-6">{{m.fecha_ingreso}}</td>
-        <td class="py-4 px-6">{{m.fecha_vencimiento}}</td>
-        <td class="py-4 px-6">NI {{m.ni}}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="grid lg:col-span-4 mt-6">
+  <div class="flex justify-center items-center">
+    <h1 class="ml-10 mr-2 text-4xl font-bold text-green-600">
+      Entradas de Materias Primas
+    </h1>
+    <img src="{% static 'img/entradas.png' %}" alt="" class="w-20" />
+  </div>
+  <div
+    class="grid lg:col-span-4 overflow-x-auto relative shadow-md sm:rounded-lg mx-10 my-10"
+  >
+    <table class="text-sm text-left text-gray-500">
+      <thead class="text-xs text-center text-white uppercase bg-green-700">
+        <tr>
+          <th scope="col" class="py-3 px-6">Cód. Materia</th>
+          <th scope="col" class="py-3 px-6 border-x">Nombre Materia Prima</th>
+          <th scope="col" class="py-3 px-6 border-x">O.C</th>
+          <th scope="col" class="py-3 px-6 border-x">N° Lote</th>
+          <th scope="col" class="py-3 px-6 border-x">Fecha Ingreso</th>
+          <th scope="col" class="py-3 px-6 border-x">Fecha Vencimiento</th>
+          <th scope="col" class="py-3 px-6 border-x">Cantidad (kg)</th>
+          <th scope="col" class="py-3 px-6 border-x">NI</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        {% for m in entradas %}
+        <tr class="bg-gray-100 border-b">
+          <th
+            scope="row"
+            class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
+          >
+            I0 {{m.codigo}}
+          </th>
+          <td class="py-4 px-6">{{m.nombre}}</td>
+          <td class="py-4 px-6">{{m.oc}}</td>
+          <td class="py-4 px-6">{{m.nlote}}</td>
+          <td class="py-4 px-4">{{m.fecha_ingreso}}</td>
+          <td class="py-4 px-4">{{m.fecha_vencimiento}}</td>
+          <td class="py-4 px-4">{{m.cantidad}}</td>
+          <td class="py-4 px-4 font-medium text-gray-900 whitespace-nowrap">
+            NI {{m.ni}}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 
 {% endblock %}
