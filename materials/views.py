@@ -12,6 +12,12 @@ def menu(request):
     return render(request, 'menu.html', data)
 
 @login_required
+def reportes(request):
+    materias = Materia.objects.all()
+    data = {'materias':materias}
+    return render(request, 'reportes.html', data)
+
+@login_required
 def agregarMaterias(request):
     form=FormularioMateria()
     if(request.method=='POST'):

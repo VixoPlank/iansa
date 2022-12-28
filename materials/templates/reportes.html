@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} IANSA - Panel de control {% endblock %}
+<!--  -->
+{%load static%} {%block content%}
+<!--    Scripts -->
+
+<div
+  class="grid lg:col-span-4 overflow-x-auto relative shadow-md sm:rounded-lg mx-10 my-10"
+>
+  <table class="text-sm text-left text-gray-500" id="datatable">
+    <thead class="text-xs text-center text-white uppercase bg-green-700">
+      <tr>
+        <th scope="col" class="py-3 px-6">Código Materia Prima</th>
+        <th scope="col" class="py-3 px-6 border-x">Nombre Materia Prima</th>
+        <th scope="col" class="py-3 px-6 border-x">Existencias</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      {% for m in materias %}
+      <tr class="bg-gray-100 border-b">
+        <th
+          scope="row"
+          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
+        >
+          I0 {{m.codigo}}
+        </th>
+        <td class="py-4 px-6">{{m.nombre}}</td>
+        <td class="py-4 px-6">{{m.existencia}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<a
+  type="button"
+  id="download_xls"
+  download="Gestion de Stock"
+  href="#"
+  class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+>
+  Exportar a Excel
+</a>
+
+<a
+  type="button"
+  id="download_xls"
+  download="Gestion de Stock"
+  href="#"
+  class="text-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+>
+  Exportar a Excel
+</a>
+
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/excellentexport@3.4.3/dist/excellentexport.min.js"
+></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+  let download_xls = document.querySelector("#download_xls");
+  download_xls.addEventListener("click", () => {
+    ExcellentExport.excel(download_xls, "datatable");
+  });
+</script>
+
+<script>
+  function generate() {
+    var doc = new jsPDF("p", "pt", "letter");
+    var htmlstring = "";
+    var tempVarToCheckPageHeight = 0;
+    var pageHeight = 0;
+    pageHeight = doc.internal.pageSize.height;
+    specialElementHandlers = {
+      // element with id of "bypass" - jQuery style selector
+      "#bypassme": function (element, renderer) {
+        // true = "handled elsewhere, bypass text extraction"
+        return true;
+      },
+    };
+    margins = {
+      top: 150,
+      bottom: 60,
+      left: 40,
+      right: 40,
+      width: 600,
+    };
+    var y = 20;
+    doc.setLineWidth(2);
+    doc.text(200, (y = y + 30), "Informe del Stock");
+    doc.autoTable({
+      html: "#datatable",
+      startY: 70,
+      theme: "grid",
+    });
+    doc.save("INFORME - Gestion de stock.pdf");
+  }
+</script>
+
+<script type="text/javascript">
+  (function (document) {
+    "use strict";
+
+    var LightTableFilter = (function (Arr) {
+      var _input;
+
+      function _onInputEvent(e) {
+        _input = e.target;
+        var tables = document.getElementsByClassName(
+          _input.getAttribute("data-table")
+        );
+        Arr.forEach.call(tables, function (table) {
+          Arr.forEach.call(table.tBodies, function (tbody) {
+            Arr.forEach.call(tbody.rows, _filter);
+          });
+        });
+      }
+
+      function _filter(row) {
+        var text = row.textContent.toLowerCase(),
+          val = _input.value.toLowerCase();
+        row.style.display = text.indexOf(val) === -1 ? "none" : "table-row";
+      }
+
+      return {
+        init: function () {
+          var inputs = document.getElementsByClassName("light-table-filter");
+          Arr.forEach.call(inputs, function (input) {
+            input.oninput = _onInputEvent;
+          });
+        },
+      };
+    })(Array.prototype);
+
+    document.addEventListener("readystatechange", function () {
+      if (document.readyState === "complete") {
+        LightTableFilter.init();
+      }
+    });
+  })(document);
+</script>
+{% endblock %}

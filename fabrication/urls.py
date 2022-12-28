@@ -13,4 +13,5 @@ urlpatterns = [
     path('fabricacion-receta/<int:id_receta>', views.agregarfabricacion, name='fabricacion-receta'),
     path('editar-receta/<int:id_receta>', views.editarRecetas, name = 'editar-receta'),
     path('eliminar-receta/<int:id_receta>', views.eliminarRecetas, name = 'eliminar-receta'),
+    
 ]
